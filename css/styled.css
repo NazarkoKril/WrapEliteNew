@@ -410,6 +410,7 @@ header {
   font-size: 40px;
   margin-bottom: 25px;
   color: var(--color_grey);
+  text-transform: uppercase;
 }
 
 .about__subtitle {
@@ -423,8 +424,13 @@ header {
 
 .btn {
   background-color: #f13a3a;
-  padding: 10px 20px;
+  padding: 10px 20px !important;
   color: #fff;
+  display: flex;
+  width: 150px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 
 .r__about {
@@ -446,6 +452,7 @@ header {
   color: #fff;
   text-align: center;
   padding-top: 50px;
+  text-transform: uppercase;
 }
 
 .service__subtitle {
@@ -502,6 +509,7 @@ header {
   color: var(--color_grey);
   text-align: center;
   padding-top: 50px;
+  text-transform: uppercase;
 }
 
 .blog__subtitle {
@@ -632,6 +640,7 @@ header {
   color: #fff;
   text-align: center;
   padding-top: 50px;
+  text-transform: uppercase;
 }
 
 .gallery__subtitle {
@@ -828,7 +837,6 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 60px;
   cursor: pointer;
   background-color: transparent;
   color: var(--color_grey);
@@ -963,4 +971,60 @@ footer {
 }
 .footer__private_item a:hover {
   color: #f13a3a;
+}
+
+.btn {
+  color: var(--color_red) !important;
+  background-color: rgba(241, 58, 58, 0.0823529412) !important;
+  border: 1px solid var(--color_red) !important;
+  position: relative !important;
+  overflow: hidden !important;
+  transition: var(--trans) !important;
+  z-index: 2 !important;
+}
+
+.btn::before,
+.btn::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  transition: var(--trans);
+  z-index: 1;
+}
+
+.btn::before {
+  right: -50px;
+  border-right: 50px solid transparent;
+  border-bottom: 80px solid var(--color_red);
+  transform: translateX(-100%);
+}
+
+.btn::after {
+  left: -50px;
+  border-left: 50px solid transparent;
+  border-top: 80px solid var(--color_red);
+  transform: translateX(100%);
+}
+
+.btn:hover {
+  color: #fff !important;
+  z-index: 2;
+  border: 1px solid var(--color_red);
+}
+
+.btn:hover::before {
+  transform: translateX(-49%);
+}
+
+.btn:hover::after {
+  transform: translateX(49%);
+}
+
+.btn__text {
+  position: relative;
+  z-index: 2;
+  text-transform: uppercase;
 }/*# sourceMappingURL=styled.css.map */

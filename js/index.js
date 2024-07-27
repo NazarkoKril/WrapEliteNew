@@ -35,9 +35,9 @@ const swiperH = new Swiper(".hero__swiper", {
         clickable: true,
 
     },
-    // autoplay: {
-    //     delay: 2000,
-    // },
+    autoplay: {
+        delay: 2000,
+    },
     speed: 1500,
 });
 
