@@ -370,10 +370,37 @@ header {
 .hero__card_item {
   width: 100%;
   position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+
 .hero__card_item img {
   width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
   display: block;
+}
+
+.hero__card_item::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.55);
+  z-index: 1;
+  pointer-events: none;
+  transition: background-color 0.3s ease;
+}
+
+.hero__card_item:hover::before {
+  background: rgba(0, 0, 0, 0.4);
+}
+
+.hero__card_item:hover img {
+  transform: scale(1.1);
 }
 
 .hero__card_info {
@@ -384,12 +411,24 @@ header {
   display: flex;
   align-items: center;
   flex-direction: column;
-  transition: var(--trans);
+  z-index: 2;
+  transition: color 0.3s ease;
 }
+
 .hero__card_info h4 {
+  margin: 0;
   color: #ffffff;
   font-size: 25px;
   font-weight: 400;
+  transition: color 0.3s ease;
+}
+
+.hero__card_info img {
+  width: 90px;
+}
+
+.hero__card_item:hover .hero__card_info h4 {
+  color: var(--color_red);
 }
 
 .about__section {
@@ -476,11 +515,41 @@ header {
 .service__item {
   width: 100%;
   position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.service__item .service__item_img {
+.service__item::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.55);
+  z-index: 1;
+  pointer-events: none;
+  transition: background-color 0.3s ease;
+}
+
+.service__item_img:hover {
+  transform: scale(1.05);
+}
+
+.service__item:hover::before {
+  background: rgba(0, 0, 0, 0.4);
+}
+
+.service__item_img {
   width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
   display: block;
+}
+
+.service__item:hover .service__item_img {
+  transform: scale(1.1);
 }
 
 .hero__card_info {
@@ -491,12 +560,22 @@ header {
   display: flex;
   align-items: center;
   flex-direction: column;
+  z-index: 2;
   transition: var(--trans);
 }
+
 .hero__card_info h4 {
+  margin: 0;
   color: #ffffff;
-  font-size: 25px;
-  font-weight: 400;
+  font-size: 50px;
+  font-weight: 600;
+  transition: color 0.3s ease;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.service__item:hover .hero__card_info h4 {
+  color: var(--color_red);
 }
 
 .section__blog {
@@ -609,9 +688,10 @@ header {
 .gallery__section {
   height: 800px;
   width: 100%;
-  background-image: url(../image/polish.webp);
+  background-image: url(../image/gallery_back.webp);
   background-repeat: no-repeat;
   background-size: cover;
+  background-position: center;
   position: relative;
   overflow: hidden;
 }
@@ -623,7 +703,7 @@ header {
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.65);
   z-index: 1;
 }
 
@@ -721,15 +801,6 @@ header {
   padding-top: 50px;
 }
 
-.form__section h2 {
-  font-size: 40px;
-  margin-bottom: 25px;
-  color: var(--color_grey);
-  text-align: center;
-  padding-top: 50px;
-  text-transform: uppercase;
-}
-
 .form__info .form__container {
   display: flex;
   justify-content: space-between;
@@ -742,116 +813,6 @@ header {
   max-width: 830px;
   display: flex;
   flex-direction: column;
-}
-
-.form__info form textarea {
-  background-color: transparent;
-  border: 1px solid var(--color_grey);
-  resize: none;
-  width: 100%;
-  outline: none;
-  padding: 20px;
-  color: var(--color_grey);
-  font-size: 18px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: 21px;
-  height: 200px;
-  margin-bottom: 30px;
-  transition: all 0.3s linear;
-}
-
-.form__info form textarea::placeholder {
-  color: var(--color_grey);
-  font-size: 16px;
-  font-style: normal;
-  font-weight: 300;
-  line-height: 21px;
-}
-
-.form__info form textarea:focus {
-  box-shadow: 0 0 5px 3px rgba(241, 58, 58, 0.4941176471);
-}
-
-.form__info form .form__box {
-  display: flex;
-  width: 100%;
-  gap: 30px;
-}
-
-.form__info form .form__box input {
-  background-color: transparent;
-  border: 1px solid var(--color_grey);
-  outline: none;
-  padding: 15px;
-  color: var(--color_grey);
-  font-size: 18px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: 21px;
-  width: 100%;
-  margin-bottom: 30px;
-  transition: all 0.3s linear;
-}
-
-.form__info form .form__box input:focus {
-  box-shadow: 0 0 5px 3px rgba(241, 58, 58, 0.4941176471);
-}
-
-.form__info form .form__box input::placeholder {
-  color: var(--color_grey);
-  font-size: 16px;
-  font-style: normal;
-  font-weight: 300;
-  line-height: 21px;
-}
-
-.form__info form input {
-  background-color: transparent;
-  border: 1px solid var(--color_grey);
-  outline: none;
-  padding: 15px;
-  color: var(--color_grey);
-  font-size: 18px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: 21px;
-  width: 100%;
-  margin-bottom: 30px;
-  transition: all 0.3s linear;
-}
-
-.form__info form input::placeholder {
-  color: var(--color_grey);
-  font-size: 16px;
-  font-style: normal;
-  font-weight: 300;
-  line-height: 21px;
-}
-
-.form__info form input:focus {
-  box-shadow: 0 0 5px 3px rgba(241, 58, 58, 0.4941176471);
-}
-
-.form__info form button {
-  width: 140px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-  background-color: transparent;
-  color: var(--color_grey);
-  font-size: 16px;
-  font-style: normal;
-  font-weight: 300;
-  line-height: 21px;
-  outline: none;
-  border: 1px solid var(--color_grey);
-  transition: var(--trans);
-}
-
-.form__info form button:active {
-  transform: translateY(5px);
 }
 
 .form__info .form__adress h4 {
@@ -872,13 +833,177 @@ header {
   margin-bottom: 40px;
 }
 
+.form__box {
+  display: flex;
+  width: 100%;
+  gap: 30px;
+}
+
+textarea::placeholder {
+  color: var(--color_grey);
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 21px;
+}
+
+input[type=text],
+input[type=email],
+input[type=tel],
+textarea {
+  font: 15px/24px "Lato", Arial, sans-serif;
+  color: #333;
+  width: 100%;
+  box-sizing: border-box;
+  letter-spacing: 1px;
+  background-color: transparent;
+  border: 1px solid var(--color_grey);
+  outline: none;
+  padding: 15px;
+  color: var(--color_grey);
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 21px;
+  transition: all 0.3s linear;
+  height: 100%;
+  resize: none;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: var(--color_grey);
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 21px;
+}
+
+button {
+  width: 140px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  background-color: transparent;
+  color: var(--color_grey);
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 21px;
+  outline: none;
+  border: 1px solid var(--color_grey);
+  transition: var(--trans);
+}
+
+.col-3 {
+  float: left;
+  width: 100%;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+input.effect-20 ~ .focus-border:before,
+input.effect-20 ~ .focus-border:after,
+textarea.effect-20 ~ .focus-border:before,
+textarea.effect-20 ~ .focus-border:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--color_red);
+  transition: 0.3s;
+}
+
+input.effect-20 ~ .focus-border:after,
+textarea.effect-20 ~ .focus-border:after {
+  top: auto;
+  bottom: 0;
+  left: auto;
+  right: 0;
+}
+
+input.effect-20 ~ .focus-border i:before,
+input.effect-20 ~ .focus-border i:after,
+textarea.effect-20 ~ .focus-border i:before,
+textarea.effect-20 ~ .focus-border i:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 2px;
+  height: 0;
+  background-color: var(--color_red);
+  transition: 0.4s;
+}
+
+input.effect-20 ~ .focus-border i:after,
+textarea.effect-20 ~ .focus-border i:after {
+  left: auto;
+  right: 0;
+  top: auto;
+  bottom: 0;
+}
+
+input.effect-20:focus ~ .focus-border:before,
+input.effect-20:focus ~ .focus-border:after,
+input.effect-20.has-content ~ .focus-border:before,
+input.effect-20.has-content ~ .focus-border:after,
+textarea.effect-20:focus ~ .focus-border:before,
+textarea.effect-20:focus ~ .focus-border:after,
+textarea.effect-20.has-content ~ .focus-border:before,
+textarea.effect-20.has-content ~ .focus-border:after {
+  width: 100%;
+  transition: 0.3s;
+}
+
+input.effect-20:focus ~ .focus-border i:before,
+input.effect-20:focus ~ .focus-border i:after,
+input.effect-20.has-content ~ .focus-border i:before,
+input.effect-20.has-content ~ .focus-border i:after,
+textarea.effect-20:focus ~ .focus-border i:before,
+textarea.effect-20:focus ~ .focus-border i:after,
+textarea.effect-20.has-content ~ .focus-border i:before,
+textarea.effect-20.has-content ~ .focus-border i:after {
+  height: 100%;
+  transition: 0.4s;
+}
+
+input.effect-20 ~ label,
+textarea.effect-20 ~ label {
+  position: absolute;
+  left: 14px;
+  width: 100%;
+  top: 15px;
+  color: #aaa;
+  transition: 0.3s;
+  z-index: 1;
+  letter-spacing: 0.5px;
+}
+
+input.effect-20:focus ~ label,
+input.effect-20.has-content ~ label,
+textarea.effect-20:focus ~ label,
+textarea.effect-20.has-content ~ label {
+  top: -24px;
+  left: 0;
+  font-size: 14px;
+  color: var(--color_red);
+  transition: 0.3s;
+  z-index: 1;
+}
+
+.textarea__form {
+  margin-top: 15px;
+  margin-bottom: 35px;
+}
+
 @media (max-width: 870px) {
   .form__box {
     flex-direction: column;
     width: 100%;
-  }
-  .form__info form .form__box input:first-child {
-    margin-right: 0px;
   }
 }
 @media (max-width: 600px) {

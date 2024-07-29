@@ -58,3 +58,22 @@ const swiperB = new Swiper(".blog__swiper", {
         prevEl: ".blog__prev",
     },
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+    var inputs = document.querySelectorAll("input.effect-20, textarea.effect-20");
+
+    inputs.forEach(function (input) {
+        input.addEventListener("focus", function () {
+            input.classList.add("has-content");
+        });
+
+        input.addEventListener("blur", function () {
+            if (input.value === "") {
+                input.classList.remove("has-content");
+            }
+        });
+        if (input.value !== "") {
+            input.classList.add("has-content");
+        }
+    });
+});
