@@ -35,10 +35,10 @@ const swiperH = new Swiper(".hero__swiper", {
         clickable: true,
 
     },
-    autoplay: {
-        delay: 2000,
-    },
-    speed: 1500,
+    // autoplay: {
+    //     delay: 2000,
+    // },
+    // speed: 1500,
 });
 
 // blog__swiper
@@ -57,6 +57,7 @@ const swiperB = new Swiper(".blog__swiper", {
         nextEl: ".blog__next",
         prevEl: ".blog__prev",
     },
+    speed: 1000,
 });
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -77,3 +78,69 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 });
+
+
+let currentIndex = 0;
+const carLeftImages = document.querySelectorAll('.car-left');
+const carRightImages = document.querySelectorAll('.car-right');
+const nextButton = document.getElementById('next');
+const prevButton = document.getElementById('prev');
+const slideTitle = document.getElementById('slide-title');
+
+const titles = ["Car Wrapping", "Paint Protection"];
+let isAnimating = false;
+let autoSlideInterval;
+
+// Функція для зміни слайдів
+const changeSlide = (direction) => {
+    if (isAnimating) return;
+    isAnimating = true;
+
+    slideTitle.style.opacity = 0;
+    slideTitle.style.transform = 'translateY(-20px)';
+
+    const nextIndex = (currentIndex + direction + carLeftImages.length) % carLeftImages.length;
+
+    carLeftImages[currentIndex].style.transform = `translateX(${direction * 100}%)`;
+    carRightImages[currentIndex].style.transform = `translateX(${direction * 100}%)`;
+
+    carLeftImages[nextIndex].classList.remove('hidden');
+    carRightImages[nextIndex].classList.remove('hidden');
+    carLeftImages[nextIndex].style.transform = `translateX(${-direction * 100}%)`;
+    carRightImages[nextIndex].style.transform = `translateX(${-direction * 100}%)`;
+
+    setTimeout(() => {
+        carLeftImages[nextIndex].style.transform = 'translateX(0)';
+        carRightImages[nextIndex].style.transform = 'translateX(0)';
+    }, 10);
+
+    setTimeout(() => {
+        slideTitle.textContent = titles[nextIndex];
+        slideTitle.style.opacity = 1;
+        slideTitle.style.transform = 'translateY(0)';
+    }, 2000);
+
+    setTimeout(() => {
+        carLeftImages[currentIndex].classList.add('hidden');
+        carRightImages[currentIndex].classList.add('hidden');
+        currentIndex = nextIndex;
+        isAnimating = false;
+    }, 3000);
+
+    clearInterval(autoSlideInterval);
+    autoSlideInterval = setInterval(() => changeSlide(1), 6000);
+};
+
+nextButton.addEventListener('click', () => {
+    changeSlide(1);
+    clearInterval(autoSlideInterval);
+    autoSlideInterval = setInterval(() => changeSlide(1), 6000);
+});
+
+prevButton.addEventListener('click', () => {
+    changeSlide(-1);
+    clearInterval(autoSlideInterval);
+    autoSlideInterval = setInterval(() => changeSlide(1), 6000);
+});
+
+autoSlideInterval = setInterval(() => changeSlide(1), 6000);

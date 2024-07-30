@@ -323,37 +323,97 @@ header {
 .hero__section {
   padding-top: 75px;
   width: 100%;
+  position: relative;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
-.hero__swiper {
+h1 {
+  position: absolute;
+  top: 90px;
+  font-size: 130px;
+  text-align: center;
   width: 100%;
+  color: var(--color_red);
+  z-index: 5;
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+  user-select: none;
 }
 
-.hero__slide {
+.slider {
+  display: flex;
   width: 100%;
-  height: 8;
-}
-.hero__slide img {
-  width: 100%;
-  display: block;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
 }
 
-.hero__swiper .swiper-pagination-bullet {
-  width: 15px !important;
-  height: 15px !important;
-  background-color: #fff !important;
-  opacity: 0.7 !important;
+.left-half,
+.right-half {
+  width: 50%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  position: relative;
+  height: 100%;
 }
 
-.hero__swiper .swiper-horizontal > .hero__swiper .swiper-pagination-bullets,
-.hero__swiper .swiper-pagination-bullets.swiper-pagination-horizontal,
-.hero__swiper .swiper-pagination-custom,
-.hero__swiper .swiper-pagination-fraction {
-  bottom: 15px !important;
+.left-half {
+  background-color: white;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  overflow: hidden;
+  width: 50.05% !important;
 }
 
-.hero__swiper .swiper-pagination-bullet-active {
-  background-color: #f13a3a !important;
+.right-half {
+  background-color: gray;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  overflow: hidden;
+  justify-content: flex-start;
+}
+
+.car-left,
+.car-right {
+  position: absolute;
+  width: 200%;
+  height: auto;
+  transition: transform 3s ease-in-out;
+}
+
+.car-left {
+  right: -100%;
+}
+
+.car-right {
+  left: -100%;
+}
+
+.hidden {
+  display: none;
+}
+
+.container__hero {
+  position: relative;
+}
+
+.container__hero button {
+  font-size: 16px !important;
+  cursor: pointer !important;
+  position: absolute !important;
+  top: -100px;
+}
+
+#prev {
+  left: 0 !important;
+}
+
+#next {
+  right: 0 !important;
 }
 
 .hero__card_section {
@@ -465,7 +525,7 @@ header {
 .btn {
   background-color: #f13a3a;
   padding: 10px 20px !important;
-  color: #fff;
+  color: var(--color_red);
   display: flex;
   width: 150px;
   justify-content: center;
@@ -621,6 +681,12 @@ header {
   background-color: #fff;
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
   width: 100%;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.blog__slide:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0.7rem 1.2rem rgba(0, 0, 0, 0.3);
 }
 
 .blog__slide_img {
@@ -737,6 +803,7 @@ header {
 
 .review__slide {
   padding: 20px;
+  height: 333px;
 }
 
 .review__slide_title {
@@ -744,6 +811,7 @@ header {
   color: #353535;
   font-weight: 500;
   margin-bottom: 20px;
+  height: 71px;
 }
 
 .review__slide_info {
@@ -782,7 +850,7 @@ header {
 
 .review__btn {
   display: flex;
-  width: 150px;
+  width: 180px;
   justify-content: center;
   align-items: center;
   margin-right: auto;
@@ -1100,13 +1168,18 @@ footer {
 }
 
 .btn {
-  color: var(--color_red) !important;
   background-color: rgba(241, 58, 58, 0.0823529412) !important;
   border: 1px solid var(--color_red) !important;
   position: relative !important;
   overflow: hidden !important;
   transition: var(--trans) !important;
   z-index: 2 !important;
+}
+
+.btn__text {
+  position: relative;
+  z-index: 2;
+  text-transform: uppercase;
 }
 
 .btn::before,
@@ -1147,10 +1220,4 @@ footer {
 
 .btn:hover::after {
   transform: translateX(49%);
-}
-
-.btn__text {
-  position: relative;
-  z-index: 2;
-  text-transform: uppercase;
 }/*# sourceMappingURL=styled.css.map */

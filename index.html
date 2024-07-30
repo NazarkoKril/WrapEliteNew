@@ -31,7 +31,7 @@
                             <a href="./index.html" class="header__link active__color no_active">Home</a>
                         </li>
                         <li class="header__item">
-                            <a href="./about-us.html" class="header__link">About us</a>
+                            <a href="./about-us.html" class="header__link">Chi siamo</a>
                         </li>
                         <li class="header__item header__dropdown">
                             <a href="./services.html" class="header__link no_active">Services <img
@@ -46,7 +46,7 @@
                             </ul>
                         </li>
                         <li class="header__item">
-                            <a href="./gallery.html" class="header__link">Gallery</a>
+                            <a href="./gallery.html" class="header__link">Galleria</a>
                         </li>
                         <li class="header__item">
                             <a href="./inquiries.html" class="header__link">Inquiries</a>
@@ -55,7 +55,7 @@
                             <a href="./blog.html" class="header__link">Blog</a>
                         </li>
                         <li class="header__item">
-                            <a href="./contact.html" class="header__link">Contact</a>
+                            <a href="./contact.html" class="header__link">Contatto</a>
                         </li>
                     </ul>
                 </nav>
@@ -75,7 +75,7 @@
                                     <a href="./index.html" class="header__link active__color">Home</a>
                                 </li>
                                 <li class="header__item">
-                                    <a href="./about-us.html" class="header__link">About us</a>
+                                    <a href="./about-us.html" class="header__link">Chi siamo</a>
                                 </li>
                                 <li class="header__item header__dropdown">
                                     <span class="header__link no_active">Services</span>
@@ -89,7 +89,7 @@
                                     </ul>
                                 </li>
                                 <li class="header__item">
-                                    <a href="./gallery.html" class="header__link">Gallery</a>
+                                    <a href="./gallery.html" class="header__link">Galleria</a>
                                 </li>
                                 <li class="header__item">
                                     <a href="./inquiries.html" class="header__link">Inquiries</a>
@@ -98,7 +98,7 @@
                                     <a href="./blog.html" class="header__link">Blog</a>
                                 </li>
                                 <li class="header__item">
-                                    <a href="./contact.html" class="header__link">Contact</a>
+                                    <a href="./contact.html" class="header__link">Contatto</a>
                                 </li>
                                 <li class="header__item">
                                     <a class="header__link" href="tel:+3383680239">Tel.: +338 3680239</a>
@@ -112,31 +112,22 @@
     </header>
     <main>
         <section class="hero__section">
-            <div class="swiper hero__swiper">
-                <div class="swiper-wrapper hero__wrapper">
-                    <div class="swiper-slide hero__slide">
-                        <a href="./service-card.html">
-                            <img src="./image/design.webp" alt="photo service" loading="lazy">
-                        </a>
-                    </div>
-                    <div class="swiper-slide hero__slide">
-                        <a href="./service-card.html">
-                            <img src="./image/polish.webp" alt="photo service" loading="lazy">
-                        </a>
-                    </div>
-                    <div class="swiper-slide hero__slide">
-                        <a href="./service-card.html">
-                            <img src="./image/ppo.webp" alt="photo service" loading="lazy">
-                        </a>
-                    </div>
-                    <div class="swiper-slide hero__slide">
-                        <a href="./service-card.html">
-                            <img src="./image/wrap.webp" alt="photo service" loading="lazy">
-                        </a>
-                    </div>
+            <h1 id="slide-title">Car Wrapping</h1>
+            <div class="slider">
+                <div class="left-half">
+                    <img src="./image/hero_swiper.png" class="car-left" alt="Car Left">
+                    <img src="./image/hero_swiper.png" class="car-left hidden" alt="Car Left">
                 </div>
-                <div class="swiper-pagination"></div>
+                <div class="right-half">
+                    <img src="./image/hero_swiper1.png" class="car-right" alt="Car Right">
+                    <img src="./image/hero_swiper2.png" class="car-right hidden" alt="Car Right">
+                </div>
             </div>
+            <div class="container container__hero">
+                <button class="btn" id="prev"><span class="btn__text">Prev</span> </button>
+                <button class="btn" id="next"><span class="btn__text">Next</span> </button>
+            </div>
+
         </section>
         <section class="hero__card_section">
             <ul class="hero__card_list">
@@ -145,7 +136,7 @@
                         <img src="./image/hero_card_1.webp" alt="photo" loading="lazy">
                         <div class="hero__card_info">
                             <!-- <img src="./image/top_links_services_icon.png" alt="photo" loading="lazy"> -->
-                            <h4>Service</h4>
+                            <h4>Servizio</h4>
                         </div>
 
                     </a>
@@ -155,7 +146,7 @@
                         <img src="./image/hero_card_2.webp" alt="photo" loading="lazy">
                         <div class="hero__card_info">
                             <!-- <img src="./image/top_links_services_icon.png" alt="photo" loading="lazy"> -->
-                            <h4>Inquiries</h4>
+                            <h4>Richieste</h4>
                         </div>
 
                     </a>
@@ -165,7 +156,7 @@
                         <img src="./image/hero_card_3.webp" alt="photo" loading="lazy">
                         <div class="hero__card_info">
                             <!-- <img src="./image/top_links_services_icon.png" alt="photo" loading="lazy"> -->
-                            <h4>Gallery</h4>
+                            <h4>Galleria</h4>
                         </div>
                     </a>
                 </li>
@@ -174,7 +165,7 @@
                         <img src="./image/hero_card_4.webp" alt="photo" loading="lazy">
                         <div class="hero__card_info">
                             <!-- <img src="./image/top_links_services_icon.png" alt="photo" loading="lazy"> -->
-                            <h4>Contact</h4>
+                            <h4>Contatto</h4>
                         </div>
                     </a>
                 </li>
@@ -183,7 +174,7 @@
         <section class="about__section">
             <div class="about__container">
                 <div class="l__about">
-                    <h3 class="about__title">About us</h3>
+                    <h3 class="about__title">Chi siamo</h3>
                     <p class="about__subtitle">WrapElite è un leader riconosciuto nella protezione e decorazione di
                         automobili, motocicli e imbarcazioni. Siamo
                         specializzati nella fornitura di servizi di alta qualità che includono l'applicazione di
@@ -195,7 +186,7 @@
                         la vostra auto, la renderemo
                         unica.
                     </p>
-                    <a class="btn" href="about-us.html"><span class="btn__text">Read more</span> </a>
+                    <a class="btn" href="about-us.html"><span class="btn__text">Leggi di più</span> </a>
                 </div>
                 <div class="r__about">
                     <img src="./image/about_us.webp" alt="photo" loading="lazy">
@@ -204,10 +195,12 @@
         </section>
         <section class="service__section">
             <div class="service__top">
-                <h3 class="service__title">Service</h3>
-                <p class="service__subtitle">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Praesentium
-                    soluta sed labore nostrum maiores voluptates sapiente at vero repudiandae? Eligendi iste ad
-                    similique expedita consequuntur officiis quae temporibus saepe quos.</p>
+                <h3 class="service__title">I Nostri Servizi</h3>
+                <p class="service__subtitle">Offriamo una vasta gamma di servizi di alta qualità per soddisfare tutte le
+                    vostre esigenze. I nostri
+                    esperti forniscono un'assistenza professionale con attenzione ai dettagli, garantendo che ogni
+                    progetto
+                    sia realizzato al massimo livello.</p>
             </div>
             <ul class="service__list">
                 <li class="service__item">
@@ -269,9 +262,10 @@
         <section class="section__blog">
             <div class="container">
                 <h3 class="blog__title">Blog</h3>
-                <p class="blog__subtitle">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iusto quo sed ex,
-                    nulla optio necessitatibus eum expedita. Quae, in vero aperiam nesciunt labore accusamus. Ut itaque
-                    veritatis est nam eum.</p>
+                <p class="blog__subtitle">Benvenuti nel nostro blog! Qui troverete le ultime notizie, consigli utili e
+                    articoli interessanti su vari argomenti. I
+                    nostri esperti condividono le loro conoscenze per aiutarvi a rimanere aggiornati su tutto ciò che è
+                    più importante.</p>
                 <div class="swiper blog__swiper">
                     <div class="swiper-wrapper blog__wrapper">
                         <div class="swiper-slide ">
@@ -391,31 +385,31 @@
                     <div class="swiper-button-next blog__next"></div>
 
                 </div>
-                <a class="btn blog__btn" href="./blog.html"><span class="btn__text">All blog</span></a>
+                <a class="btn blog__btn" href="./blog.html"><span class="btn__text">Tutti i blog</span></a>
             </div>
         </section>
         <section class="gallery__section">
             <div class="container gallery__container">
-                <h3 class="gallery__title">Gallery</h3>
-                <p class="gallery__subtitle">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Temporibus neque
-                    assumenda repellat id expedita recusandae ex harum cupiditate odio ducimus asperiores hic distinctio
-                    aperiam atque aspernatur, velit possimus vero iste.</p>
-                <a class="btn blog__btn" href="./gallery.html"><span class="btn__text">Gallery</span> </a>
+                <h3 class="gallery__title">Galleria</h3>
+                <p class="gallery__subtitle">Scopri la nostra galleria per vedere esempi del nostro lavoro. Siamo
+                    orgogliosi di ogni progetto che realizziamo e siamo
+                    felici di condividere i risultati con voi.</p>
+                <a class="btn blog__btn" href="./gallery.html"><span class="btn__text">Galleria</span> </a>
             </div>
         </section>
         <section class="section__blog">
             <div class="container">
-                <h3 class="blog__title">Review</h3>
-                <p class="blog__subtitle">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iusto quo sed ex,
-                    nulla optio necessitatibus eum expedita. Quae, in vero aperiam nesciunt labore accusamus. Ut itaque
-                    veritatis est nam eum.</p>
+                <h3 class="blog__title">Recensione</h3>
+                <p class="blog__subtitle">Scopri cosa dicono i nostri clienti sui nostri servizi. Le recensioni
+                    autentiche e sincere testimoniano la qualità del
+                    nostro lavoro e la soddisfazione dei nostri clienti.</p>
                 <div class="swiper blog__swiper">
                     <div class="swiper-wrapper blog__wrapper">
                         <div class="swiper-slide ">
                             <div class="blog__slide review__slide">
-                                <h4 class="review__slide_title">this is team so proffesion</h4>
+                                <h4 class="review__slide_title">Qualità e Professionalità Impareggiabili</h4>
                                 <div class="review__slide_info">
-                                    <div class="review__name">Nazar Kril</div>
+                                    <div class="review__name">Luca Marchesi</div>
                                     <div class="review__star">
                                         <img src="./image/star_solid.svg" alt="star">
                                         <img src="./image/star_solid.svg" alt="star">
@@ -424,17 +418,17 @@
                                         <img src="./image/star_solid.svg" alt="star">
                                     </div>
                                 </div>
-                                <p class="review__slide_subtitle">Lorem ipsum dolor, sit amet consectetur
-                                    adipisicing elit. Qui atque, ea distinctio eum unde vitae tempore corrupti eaque
-                                    possimus molestiae enim ex harum fuga, quae iusto. Aliquam repudiandae
-                                    accusantium voluptates.</p>
+                                <p class="review__slide_subtitle">Ho rivestito la mia auto sportiva con il vostro
+                                    servizio e il
+                                    risultato ha superato le mie aspettative. La qualità del
+                                    lavoro è di prim'ordine ed è stato estremamente professionale.</p>
                             </div>
                         </div>
                         <div class="swiper-slide ">
                             <div class="blog__slide review__slide">
-                                <h4 class="review__slide_title">this is team so proffesion</h4>
+                                <h4 class="review__slide_title">Eleganza e Resistenza Impeccabili</h4>
                                 <div class="review__slide_info">
-                                    <div class="review__name">Nazar Kril</div>
+                                    <div class="review__name">Marco Rossi</div>
                                     <div class="review__star">
                                         <img src="./image/star_solid.svg" alt="star">
                                         <img src="./image/star_solid.svg" alt="star">
@@ -443,38 +437,18 @@
                                         <img src="./image/star_solid.svg" alt="star">
                                     </div>
                                 </div>
-                                <p class="review__slide_subtitle">Lorem ipsum dolor, sit amet consectetur
-                                    adipisicing elit. Qui atque, ea distinctio eum unde vitae tempore corrupti eaque
-                                    possimus molestiae enim ex harum fuga, quae iusto. Aliquam repudiandae
-                                    accusantium voluptates.</p>
-                            </div>
-                        </div>
-
-                        <div class="swiper-slide ">
-                            <div class="blog__slide review__slide">
-                                <h4 class="review__slide_title">this is team so proffesion</h4>
-                                <div class="review__slide_info">
-                                    <div class="review__name">Nazar Kril</div>
-                                    <div class="review__star">
-                                        <img src="./image/star_solid.svg" alt="star">
-                                        <img src="./image/star_solid.svg" alt="star">
-                                        <img src="./image/star_solid.svg" alt="star">
-                                        <img src="./image/star_solid.svg" alt="star">
-                                        <img src="./image/star_solid.svg" alt="star">
-                                    </div>
-                                </div>
-                                <p class="review__slide_subtitle">Lorem ipsum dolor, sit amet consectetur
-                                    adipisicing elit. Qui atque, ea distinctio eum unde vitae tempore corrupti eaque
-                                    possimus molestiae enim ex harum fuga, quae iusto. Aliquam repudiandae
-                                    accusantium voluptates.</p>
+                                <p class="review__slide_subtitle">I vostri ragazzi hanno fatto un lavoro fantastico a
+                                    rivestire
+                                    la mia auto. Ha un aspetto elegante ed è resistente ai graffi.
+                                    Raccomando il vostro servizio!</p>
                             </div>
                         </div>
 
                         <div class="swiper-slide ">
                             <div class="blog__slide review__slide">
-                                <h4 class="review__slide_title">this is team so proffesion</h4>
+                                <h4 class="review__slide_title">Auto Come Nuova e Ben Protetta</h4>
                                 <div class="review__slide_info">
-                                    <div class="review__name">Nazar Kril</div>
+                                    <div class="review__name">Alessia Bianchi</div>
                                     <div class="review__star">
                                         <img src="./image/star_solid.svg" alt="star">
                                         <img src="./image/star_solid.svg" alt="star">
@@ -483,17 +457,38 @@
                                         <img src="./image/star_solid.svg" alt="star">
                                     </div>
                                 </div>
-                                <p class="review__slide_subtitle">Lorem ipsum dolor, sit amet consectetur
-                                    adipisicing elit. Qui atque, ea distinctio eum unde vitae tempore corrupti eaque
-                                    possimus molestiae enim ex harum fuga, quae iusto. Aliquam repudiandae
-                                    accusantium voluptates.</p>
+                                <p class="review__slide_subtitle">Molto soddisfatta per il risultato del lavoro fatto da
+                                    vostro
+                                    team. La mia auto ora sembra nuova e sento che è ben
+                                    protetta. Grazie mille!</p>
+                            </div>
+                        </div>
+
+                        <div class="swiper-slide ">
+                            <div class="blog__slide review__slide">
+                                <h4 class="review__slide_title">Sogno Realizzato!</h4>
+                                <div class="review__slide_info">
+                                    <div class="review__name">Sofia Moretti</div>
+                                    <div class="review__star">
+                                        <img src="./image/star_solid.svg" alt="star">
+                                        <img src="./image/star_solid.svg" alt="star">
+                                        <img src="./image/star_solid.svg" alt="star">
+                                        <img src="./image/star_solid.svg" alt="star">
+                                        <img src="./image/star_solid.svg" alt="star">
+                                    </div>
+                                </div>
+                                <p class="review__slide_subtitle">Da tempo sognavo di rivestire la mia auto con una
+                                    pellicola
+                                    e il vostro servizio ha superato le mie aspettative. Il
+                                    vostro team si è rivelato molto professionale e il risultato
+                                    è semplicemente fantastico!</p>
                             </div>
                         </div>
                         <div class="swiper-slide ">
                             <div class="blog__slide review__slide">
-                                <h4 class="review__slide_title">this is team so proffesion</h4>
+                                <h4 class="review__slide_title">Capolavoro su Ruote!</h4>
                                 <div class="review__slide_info">
-                                    <div class="review__name">Nazar Kril</div>
+                                    <div class="review__name">Giovanni Romano</div>
                                     <div class="review__star">
                                         <img src="./image/star_solid.svg" alt="star">
                                         <img src="./image/star_solid.svg" alt="star">
@@ -502,10 +497,11 @@
                                         <img src="./image/star_solid.svg" alt="star">
                                     </div>
                                 </div>
-                                <p class="review__slide_subtitle">Lorem ipsum dolor, sit amet consectetur
-                                    adipisicing elit. Qui atque, ea distinctio eum unde vitae tempore corrupti eaque
-                                    possimus molestiae enim ex harum fuga, quae iusto. Aliquam repudiandae
-                                    accusantium voluptates.</p>
+                                <p class="review__slide_subtitle">La pellicola applicata alla mia auto dai vostri
+                                    operatori è
+                                    eccezionale! Grande professionalità e attenzione ai
+                                    dettagli da parte dei vostri specialisti. Ora la mia auto
+                                    è un vero capolavoro su ruote!</p>
                             </div>
                         </div>
 
@@ -517,7 +513,7 @@
                     <div class="swiper-button-next blog__next"></div>
 
                 </div>
-                <button class="btn review__btn "> <span class="btn__text">review</span></button>
+                <button class="btn review__btn "> <span class="btn__text">Lascia feedback</span></button>
             </div>
         </section>
         <section class="form__section">
@@ -545,7 +541,8 @@
                                     <span class="focus-border"><i></i></span>
                                 </div>
                                 <div class="col-3 input-effect">
-                                    <input class="effect-20" type="tel" name="phone" placeholder="" id="form3Phone">
+                                    <input class="effect-20 phoneInput" type="tel" name="phone" placeholder=""
+                                        id="form3Phone">
                                     <label for="form3Phone">Phone*</label>
                                     <span class="focus-border"><i></i></span>
                                 </div>
@@ -563,7 +560,7 @@
                             <p>Viale-Venezia 268. Cap 25123</p>
                             <h4>+338 3680239</h4>
                             <p>Da lun.a ven. dalle 8 alle 19</p>
-                            <h4>Email: <br>wrapelit@gmail.com</h4>
+                            <h4>wrapelit@gmail.com</h4>
                             <p>Inviaci la tua richiesta in qualsiasi momento!</p>
                         </div>
                     </div>
@@ -581,14 +578,14 @@
                     <a href="./index.html" class="header__link active__color no_active">Home</a>
                 </li>
                 <li class="footer__item">
-                    <a href="./about-us.html" class="header__link">About us</a>
+                    <a href="./about-us.html" class="header__link">Chi siamo</a>
                 </li>
                 <li class="footer__item ">
                     <a href="./services.html" class="header__link">Services</a>
 
                 </li>
                 <li class="footer__item">
-                    <a href="./gallery.html" class="header__link">Gallery</a>
+                    <a href="./gallery.html" class="header__link">Galleria</a>
                 </li>
                 <li class="footer__item">
                     <a href="./inquiries.html" class="header__link">Inquiries</a>
@@ -597,7 +594,7 @@
                     <a href="./blog.html" class="header__link">Blog</a>
                 </li>
                 <li class="footer__item">
-                    <a href="./contact.html" class="header__link">Contact</a>
+                    <a href="./contact.html" class="header__link">Contatto</a>
                 </li>
             </ul>
             <div class="f_logo">
@@ -657,7 +654,7 @@
                         <a href="">Copyright (c) WrapElite</a>
                     </li>
                     <li class="footer__private_item">
-                        <a href="">All rights reserved</a>
+                        <a href="">Tutti i diritti riservati</a>
                     </li>
                     <li class="footer__private_item">
                         <a class="mail" href="mailto:wrapelit@gmail.com">wrapelit@gmail.com</a>
@@ -675,11 +672,31 @@
     </footer>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="./js/index.js"></script>
+    <script src="/js/maska-nomera.js" type="text/javascript"></script>
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
         AOS.init();
     </script>
-    <script src="./js/index.js"></script>
+    <script>
+        $(".phoneInput").mask("+39-888-888-8888");
+
+        $.fn.setCursorPosition = function (pos) {
+            if ($(this).get(0).setSelectionRange) {
+                $(this).get(0).setSelectionRange(pos, pos);
+            } else if ($(this).get(0).createTextRange) {
+                var range = $(this).get(0).createTextRange();
+                range.collapse(true);
+                range.moveEnd("character", pos);
+                range.moveStart("character", pos);
+                range.select();
+            }
+        };
+
+        $('input[type="tel"]').click(function () {
+            $(this).setCursorPosition(16);
+        });
+    </script>
 </body>
 
 </html>
