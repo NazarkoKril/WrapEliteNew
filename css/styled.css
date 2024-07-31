@@ -35,21 +35,6 @@ img {
   -ms-user-select: none;
 }
 
-@media (min-width: 2200px) {
-  body {
-    zoom: 1.45;
-  }
-}
-@media (min-width: 2560px) {
-  body {
-    zoom: 1.6;
-  }
-}
-@media (max-width: 1600px) {
-  body {
-    zoom: 1;
-  }
-}
 .container {
   width: 100%;
   max-width: 1500px;
@@ -426,11 +411,11 @@ h1 {
 }
 
 #prev {
-  left: 0 !important;
+  left: 20px !important;
 }
 
 #next {
-  right: 0 !important;
+  right: 20px !important;
 }
 
 .hero__card_section {
