@@ -14,34 +14,8 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-// hero__swiper
-const swiperH = new Swiper(".hero__swiper", {
-    loop: true,
-    slidesPerView: 1,
-    spaceBetween: 0,
-    breakpoints: {
-
-        320: {
-            slidesPerView: 1,
-            spaceBetween: 0
-        },
-        1350: {
-            slidesPerView: 1,
-            spaceBetween: 0
-        }
-    },
-    pagination: {
-        el: ".swiper-pagination",
-        clickable: true,
-
-    },
-    // autoplay: {
-    //     delay: 2000,
-    // },
-    // speed: 1500,
-});
-
 // blog__swiper
+
 const swiperB = new Swiper(".blog__swiper", {
     loop: true,
     slidesPerView: 3,
@@ -49,6 +23,14 @@ const swiperB = new Swiper(".blog__swiper", {
     breakpoints: {
 
         320: {
+            slidesPerView: 1,
+            spaceBetween: 50
+        },
+        880: {
+            slidesPerView: 2,
+            spaceBetween: 20
+        },
+        1275: {
             slidesPerView: 3,
             spaceBetween: 0
         },
@@ -59,6 +41,8 @@ const swiperB = new Swiper(".blog__swiper", {
     },
     speed: 1000,
 });
+
+// form input animation
 
 document.addEventListener("DOMContentLoaded", function () {
     var inputs = document.querySelectorAll("input.effect-20, textarea.effect-20");
@@ -79,6 +63,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
+// hero_service
 
 let currentIndex = 0;
 const carLeftImages = document.querySelectorAll('.car-left');
@@ -91,7 +76,7 @@ const titles = ["Car Wrapping", "Paint Protection"];
 let isAnimating = false;
 let autoSlideInterval;
 
-// Функція для зміни слайдів
+
 const changeSlide = (direction) => {
     if (isAnimating) return;
     isAnimating = true;
