@@ -72,7 +72,7 @@ const nextButton = document.getElementById('next');
 const prevButton = document.getElementById('prev');
 const slideTitle = document.getElementById('slide-title');
 
-const titles = ["Car Wrapping", "Paint Protection"];
+const titles = ["Oscuramento Vetri", "Wrapping Auto", "Pellicole Protettive PPF", "Design Grafico"];
 let isAnimating = false;
 let autoSlideInterval;
 
