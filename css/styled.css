@@ -972,6 +972,7 @@ button {
   width: 100%;
   margin-bottom: 20px;
   position: relative;
+  border-radius: 0px !important;
 }
 
 input.effect-20 ~ .focus-border:before,
@@ -1418,6 +1419,9 @@ footer {
   }
   .form__info {
     padding-top: 0px;
+  }
+  .textarea__form {
+    height: 242px;
   }
 }
 @media (max-width: 700px) {
