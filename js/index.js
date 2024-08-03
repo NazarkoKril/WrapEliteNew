@@ -2,18 +2,29 @@
 document.addEventListener('DOMContentLoaded', () => {
     const burgerIcon = document.querySelector('.burger__icon');
     const burgerMenu = document.querySelector('.burger__menu');
+    const servicesToggle = document.getElementById("servicesToggle");
+    const servicesList = document.getElementById("servicesList");
+    const icon = servicesToggle.querySelector(".burger_serv__icon");
 
     burgerIcon.addEventListener('click', () => {
         burgerIcon.classList.toggle('active');
         burgerMenu.classList.toggle('active');
-        if (burgerMenu.classList.contains('active')) {
-            document.body.style.overflow = 'hidden';
-        } else {
-            document.body.style.overflow = '';
+        document.body.style.overflow = burgerMenu.classList.contains('active') ? 'hidden' : '';
+    });
+
+    servicesToggle.addEventListener("click", (event) => {
+        event.stopPropagation();
+        servicesList.classList.toggle("active");
+        icon.classList.toggle("rotated");
+    });
+
+    document.addEventListener("click", (event) => {
+        if (!servicesList.contains(event.target) && !servicesToggle.contains(event.target)) {
+            servicesList.classList.remove("active");
+            icon.classList.remove("rotated");
         }
     });
 });
-
 // blog__swiper
 
 const swiperB = new Swiper(".blog__swiper", {
