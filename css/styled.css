@@ -1358,13 +1358,21 @@ footer {
   margin-bottom: 0px;
 }
 
+.qual1 {
+  background-image: url(../image/quality1.svg);
+  background-size: 220px;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
 .btn {
-  background-color: rgba(241, 58, 58, 0.0823529412) !important;
-  border: 1px solid var(--color_red) !important;
+  background-color: var(--color_red) !important;
+  border: none !important;
   position: relative !important;
   overflow: hidden !important;
   transition: var(--trans) !important;
   z-index: 2 !important;
+  color: white;
 }
 
 .btn__text {
@@ -1388,14 +1396,14 @@ footer {
 .btn::before {
   right: -50px;
   border-right: 50px solid transparent;
-  border-bottom: 80px solid var(--color_red);
+  border-bottom: 80px solid var(--color_grey);
   transform: translateX(-100%);
 }
 
 .btn::after {
   left: -50px;
   border-left: 50px solid transparent;
-  border-top: 80px solid var(--color_red);
+  border-top: 80px solid var(--color_grey);
   transform: translateX(100%);
 }
 
