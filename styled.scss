@@ -755,11 +755,11 @@ h1 {
 }
 .blog__prev {
   left: 0px !important;
-  color: var(--color_grey) !important;
+  color: var(--color_red) !important;
 }
 .blog__next {
   right: 0px !important;
-  color: var(--color_grey) !important;
+  color: var(--color_red) !important;
 }
 .blog__btn {
   display: flex;
@@ -1300,6 +1300,24 @@ footer {
 }
 .qual1 {
   background-image: url(../image/quality1.svg);
+  background-size: 220px;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.qual2 {
+  background-image: url(../image/quality2.svg);
+  background-size: 220px;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.qual3 {
+  background-image: url(../image/quality3.svg);
+  background-size: 220px;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.qual4 {
+  background-image: url(../image/quality4.svg);
   background-size: 220px;
   background-position: center;
   background-repeat: no-repeat;
