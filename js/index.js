@@ -140,3 +140,36 @@ prevButton.addEventListener('click', () => {
 });
 
 autoSlideInterval = setInterval(() => changeSlide(1), 6000);
+
+// pop up image
+
+function openModal(element) {
+    const modal = document.getElementById("imageModal");
+    const modalImg = document.getElementById("modalImage");
+    modal.style.display = "block";
+    modalImg.src = element.src;
+}
+
+function closeModal(event) {
+    const modal = document.getElementById("imageModal");
+    if (event.target === modal || event.target.classList.contains('close')) {
+        modal.style.display = "none";
+    }
+}
+
+// form inquiries
+
+document.addEventListener('DOMContentLoaded', function () {
+    const wrap6Checkbox = document.getElementById('wrap6');
+    const addressField = document.getElementById('addressField');
+
+    wrap6Checkbox.addEventListener('change', function () {
+        if (this.checked) {
+            addressField.style.opacity = '1';
+            addressField.style.maxHeight = '100px';
+        } else {
+            addressField.style.opacity = '0';
+            addressField.style.maxHeight = '0';
+        }
+    });
+});
