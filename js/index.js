@@ -125,7 +125,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
-// hero_service
+// hero_swiper
 
 let currentIndex = 0;
 const carLeftImages = document.querySelectorAll('.car-left');
@@ -148,17 +148,31 @@ const changeSlide = (direction) => {
 
     const nextIndex = (currentIndex + direction + carLeftImages.length) % carLeftImages.length;
 
+    // Встановлюємо анімацію обертання для поточного автомобіля
+    carLeftImages[currentIndex].style.setProperty('--wheel-rotation', `${direction * 360}deg`);
+    carRightImages[currentIndex].style.setProperty('--wheel-rotation', `${direction * 360}deg`);
+
     carLeftImages[currentIndex].style.transform = `translateX(${direction * 100}%)`;
     carRightImages[currentIndex].style.transform = `translateX(${direction * 100}%)`;
 
+    // Робимо автомобіль, який з'являється, видимим
     carLeftImages[nextIndex].classList.remove('hidden');
     carRightImages[nextIndex].classList.remove('hidden');
+
+    // Встановлюємо початкове обертання для нового автомобіля
+    carLeftImages[nextIndex].style.setProperty('--wheel-rotation', `${-direction * 360}deg`);
+    carRightImages[nextIndex].style.setProperty('--wheel-rotation', `${-direction * 360}deg`);
+
     carLeftImages[nextIndex].style.transform = `translateX(${-direction * 100}%)`;
     carRightImages[nextIndex].style.transform = `translateX(${-direction * 100}%)`;
 
     setTimeout(() => {
         carLeftImages[nextIndex].style.transform = 'translateX(0)';
         carRightImages[nextIndex].style.transform = 'translateX(0)';
+
+        // Зупиняємо обертання коліс, коли автомобіль заїхав
+        carLeftImages[nextIndex].style.setProperty('--wheel-rotation', '0deg');
+        carRightImages[nextIndex].style.setProperty('--wheel-rotation', '0deg');
     }, 10);
 
     setTimeout(() => {
@@ -177,6 +191,7 @@ const changeSlide = (direction) => {
     clearInterval(autoSlideInterval);
     autoSlideInterval = setInterval(() => changeSlide(1), 6000);
 };
+
 
 nextButton.addEventListener('click', () => {
     changeSlide(1);

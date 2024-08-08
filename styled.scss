@@ -421,16 +421,63 @@ h1 {
   right: -100%;
 }
 
+.car-left img {
+  width: 100%;
+}
+
 .car-right {
   left: -100%;
+}
+
+.car-right img {
+  width: 100%;
+  position: relative;
+}
+
+.car-left::before,
+.car-right::before,
+.car-left::after,
+.car-right::after {
+  content: "";
+  position: absolute;
+  width: 13.5%;
+  height: 26.5%;
+  background-image: url(../image/wheel.png);
+  transform: rotate(var(--wheel-rotation, 0deg));
+  background-size: cover;
+  transform-origin: center;
+  transition: transform 3s ease-in-out;
+  z-index: 3;
+}
+
+.car-left::before {
+  bottom: 26.5%;
+  left: 23.2%;
+}
+
+.car-left::after {
+  bottom: 25.5%;
+  right: 22.55%;
+}
+
+.car-right::before {
+  bottom: 26.5%;
+  left: 23.2%;
+}
+
+.car-right::after {
+  bottom: 25.5%;
+  right: 22.55%;
 }
 
 .hidden {
   display: none;
 }
+
 .container__hero {
   position: relative;
 }
+
 .container__hero button {
   font-size: 16px !important;
   cursor: pointer !important;
@@ -897,20 +944,20 @@ h1 {
 
 .form__info .form__adress h4 {
   color: #2a2a2a;
-  font-size: 16px;
+  font-size: 20px;
   font-style: normal;
   font-weight: 600;
   line-height: 19.2px;
-  margin-bottom: 2px;
+  margin-bottom: 3px;
 }
 
 .form__info .form__adress p {
   color: #8a8a8a;
-  font-size: 15px;
+  font-size: 18px;
   font-style: normal;
   font-weight: 400;
   line-height: 30px;
-  margin-bottom: 40px;
+  margin-bottom: 50px;
 }
 
 .form__box {
@@ -1081,6 +1128,7 @@ textarea.effect-20.has-content ~ label {
 .form__title {
   margin-bottom: 25px;
   color: var(--color_grey);
+  font-size: 22px;
 }
 .checkbox-btn {
   display: inline-block;
@@ -1140,7 +1188,13 @@ textarea.effect-20.has-content ~ label {
 .additional-field {
   height: 53px;
 }
-
+.form__adress img {
+  width: 100%;
+  max-width: 430px;
+  margin-bottom: 70px;
+  padding-top: 20px;
+  display: block;
+}
 @media (max-width: 870px) {
   .form__box {
     flex-direction: column;
