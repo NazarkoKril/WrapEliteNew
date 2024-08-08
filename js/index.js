@@ -25,6 +25,31 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 });
+// form 
+document.addEventListener('DOMContentLoaded', (event) => {
+    const mobileWrappingCheckbox = document.getElementById('mobileWrappingCheckbox');
+    const addressInput = document.getElementById('addressInput');
+    const formazioneCheckbox = document.getElementById('formazioneCheckbox');
+    const formazioneMessage = document.getElementById('formazioneMessage');
+
+    mobileWrappingCheckbox.addEventListener('change', function () {
+        toggleElement(addressInput, this.checked);
+    });
+
+    formazioneCheckbox.addEventListener('change', function () {
+        toggleElement(formazioneMessage, this.checked);
+    });
+
+    function toggleElement(element, show) {
+        if (show) {
+            element.style.height = 53 + 'px';
+            element.classList.add('open');
+        } else {
+            element.style.height = '0';
+            element.classList.remove('open');
+        }
+    }
+});
 // blog__swiper
 
 const swiperB = new Swiper(".blog__swiper", {
@@ -52,6 +77,32 @@ const swiperB = new Swiper(".blog__swiper", {
     },
     speed: 1000,
 });
+
+// contact__swiper
+
+const swiperC = new Swiper(".contact__swiper", {
+    loop: true,
+    slidesPerView: 4,
+    spaceBetween: 0,
+    breakpoints: {
+
+        320: {
+            slidesPerView: 3,
+            spaceBetween: 0
+        },
+
+    },
+    navigation: {
+        nextEl: ".blog__next",
+        prevEl: ".blog__prev",
+    },
+    speed: 1000,
+    pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+    },
+});
+
 
 // form input animation
 
@@ -156,20 +207,3 @@ function closeModal(event) {
         modal.style.display = "none";
     }
 }
-
-// form inquiries
-
-document.addEventListener('DOMContentLoaded', function () {
-    const wrap6Checkbox = document.getElementById('wrap6');
-    const addressField = document.getElementById('addressField');
-
-    wrap6Checkbox.addEventListener('change', function () {
-        if (this.checked) {
-            addressField.style.opacity = '1';
-            addressField.style.maxHeight = '100px';
-        } else {
-            addressField.style.opacity = '0';
-            addressField.style.maxHeight = '0';
-        }
-    });
-});

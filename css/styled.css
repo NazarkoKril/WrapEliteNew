@@ -1118,8 +1118,76 @@ textarea.effect-20.has-content ~ label {
 }
 
 .textarea__form {
-  margin-top: 15px;
   margin-bottom: 35px;
+}
+
+.form__title {
+  margin-bottom: 25px;
+  color: var(--color_grey);
+}
+
+.checkbox-btn {
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+  margin-bottom: 10px;
+  background-color: transparent;
+  transition: background-color 0.3s, color 0.3s;
+  user-select: none;
+}
+
+.checkbox-btn input[type=checkbox] {
+  display: none;
+}
+
+.btn-text {
+  font-size: 14px !important;
+  width: fit-content !important;
+}
+
+.checkbox-btn input[type=checkbox]:checked + .btn-text {
+  background-color: var(--color_red) !important;
+  color: #fff;
+}
+
+.service__checkbox {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.additional-field,
+.additional-message {
+  transition: height 0.3s ease, opacity 0.3s ease;
+  opacity: 0;
+  color: #0e338b;
+  font-family: "Lato", sans-serif;
+  font-size: 16px;
+}
+
+.additional-field.open,
+.additional-message.open {
+  opacity: 1;
+  height: auto;
+}
+
+.additional-message {
+  width: 100%;
+  border: 1px solid var(--color_red);
+  color: var(--color_grey);
+  font-size: 18px;
+  background-color: rgba(241, 58, 58, 0.1294117647);
+  padding: 12px;
+  padding-left: 35px;
+  background-image: url(../image/warning_icon.svg);
+  background-repeat: no-repeat;
+  background-position: 8px;
+  background-size: 20px;
+  margin-bottom: 10px;
+}
+
+.additional-field {
+  height: 53px;
 }
 
 @media (max-width: 870px) {
@@ -1339,6 +1407,7 @@ footer {
   transform: translateY(-50%);
   z-index: 2;
   color: #fff;
+  text-transform: uppercase;
 }
 .about__hero::before {
   content: "";
@@ -1555,44 +1624,227 @@ footer {
     opacity: 1;
   }
 }
-.form__container {
+.study__container {
+  display: flex;
+  width: 100%;
+  padding: 60px 80px 70px 20px;
+}
+
+.l__study,
+.r__study {
+  width: 50%;
+}
+
+.l__study p {
+  font-size: 20px !important;
+  width: 90%;
+}
+
+.faq__item {
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.faq__item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0.7rem 1.2rem rgba(0, 0, 0, 0.3);
+}
+
+.faq__question {
+  cursor: pointer;
   display: flex;
   justify-content: space-between;
-  gap: 20px;
-  padding-top: 50px;
+  align-items: center;
+  width: 100%;
+  padding: 17px 19px 17px 30px;
+  background: #fbfbfb;
+  color: var(--color_grey);
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  position: relative;
 }
 
-.form__left,
-.form__right {
-  width: 48%;
+.toggle-icon {
+  display: flex;
+  align-items: center;
+  margin-left: 10px;
 }
 
-.form__box {
+.faq__list {
   display: flex;
   flex-direction: column;
-  width: 100%;
-  padding-top: 25px;
-  padding-bottom: 25px;
+  gap: 27px;
 }
 
-.col-3 {
-  position: relative;
-  margin-bottom: 0px !important;
+.faq__answer {
+  background: #fbfbfb;
+  border-top: 1px solid var(--color_red);
+  color: var(--color_grey);
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  padding: 24px 30px;
 }
 
-.checkbox-grid {
+.study__stage {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.study__stage h3 {
+  color: var(--color_grey);
+  font-weight: 500;
+  font-size: 25px;
+}
+.study__stage span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+  border: 1px solid var(--color_red);
+  color: #f13a3a;
+}
+
+.about__page .container {
+  padding-bottom: 60px;
+}
+
+@keyframes rotate-in {
+  0% {
+    transform: rotate(-90deg);
+    opacity: 0;
+  }
+  100% {
+    transform: rotate(0);
+    opacity: 1;
+  }
+}
+@keyframes rotate-out {
+  0% {
+    transform: rotate(0);
+    opacity: 1;
+  }
+  100% {
+    transform: rotate(90deg);
+    opacity: 0;
+  }
+}
+.rotate-in {
+  animation: rotate-in 0.5s forwards;
+}
+
+.rotate-out {
+  animation: rotate-out 53s forwards;
+}
+
+.plus-icon,
+.minus-icon {
+  transition: opacity 0.5s, transform 0.5s;
+  position: absolute;
+  right: 15px;
+}
+
+.plus-icon {
+  opacity: 1;
+}
+
+.minus-icon {
+  opacity: 0;
+  transform: rotate(90deg);
+}
+
+.faq__item.active .plus-icon {
+  opacity: 0;
+  transform: rotate(-90deg);
+}
+
+.faq__item.active .minus-icon {
+  opacity: 1;
+  transform: rotate(0);
+}
+
+.blog__list {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  width: 100%;
+}
+.blog__list .blog__slide_subtitle {
+  margin-bottom: 100px;
+}
+
+.blog__slide_info {
+  position: relative;
+}
+.blog__slide_info a {
+  position: absolute !important;
+  bottom: 20px !important;
+  left: 20px !important;
+}
+
+.nav__serv {
+  position: absolute;
+  top: 20%;
+  transform: translateX(10px);
+  z-index: 4;
+  display: flex;
+  align-items: center;
   gap: 10px;
-  margin-bottom: 20px;
+}
+.nav__serv a {
+  color: white;
+  font-size: 20px;
 }
 
-.address__field {
-  transition: opacity 0.5s, max-height 0.5s;
+.contact__section {
+  padding-top: 50px;
+  padding-bottom: 20px;
+  background-color: var(--color_grey);
+}
+.contact__section .blog__list {
+  padding-top: 50px;
+  grid-template-columns: repeat(4, 1fr);
 }
 
-.form__services {
-  margin-top: 25px;
+.contact__video {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.blog__item {
+  width: 100%;
+}
+.blog__item img {
+  width: 100%;
+  display: block;
+}
+
+.contact__swiper {
+  margin-top: 50px;
+  padding-right: 20px !important;
+  padding-left: 20px !important;
+  height: 350px !important;
+}
+.contact__swiper .swiper-pagination-bullet-active {
+  background-color: var(--color_red) !important;
+}
+.contact__swiper .swiper-pagination-bullet {
+  width: 15px !important;
+  height: 15px !important;
+  background-color: #f13a3a;
+}
+
+.contact__slide {
+  padding-right: 25px;
+  padding-left: 25px;
+}
+.contact__slide .blog__slide {
+  transform: none !important;
 }
 
 .btn {
@@ -1649,6 +1901,18 @@ footer {
 
 .btn:hover::after {
   transform: translateX(49%);
+}
+
+.btn-text {
+  background-color: var(--color_grey) !important;
+}
+
+.btn-text::before {
+  border-bottom: 80px solid var(--color_red);
+}
+
+.btn-text::after {
+  border-top: 80px solid var(--color_red);
 }
 
 @media (max-width: 1680px) {
