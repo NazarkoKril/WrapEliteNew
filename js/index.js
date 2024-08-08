@@ -205,7 +205,7 @@ prevButton.addEventListener('click', () => {
     autoSlideInterval = setInterval(() => changeSlide(1), 6000);
 });
 
-autoSlideInterval = setInterval(() => changeSlide(1), 6000);
+// autoSlideInterval = setInterval(() => changeSlide(1), 6000);
 
 // pop up image
 
