@@ -222,7 +222,7 @@ header {
   transition: right 0.3s ease;
   z-index: 1000;
   overflow-y: auto;
-  transition: max-height 0.5s ease;
+  transition: var(--trans);
   max-height: 100%;
 }
 .burger__menu.active {
@@ -1132,7 +1132,7 @@ textarea.effect-20.has-content ~ label {
   margin-bottom: 35px;
 }
 .form__title {
-  margin-bottom: 25px;
+  margin-bottom: 20px !important;
   color: var(--color_grey);
   font-size: 22px;
 }
@@ -1879,6 +1879,18 @@ footer {
   border-top: 80px solid var(--color_red);
 }
 
+.checkbox-btn input[type="checkbox"]:checked + .btn-text::before {
+  transform: translateX(-49%);
+}
+.checkbox-btn input[type="checkbox"]:checked + .btn-text::after {
+  transform: translateX(49%);
+}
+.checkbox-btn input[type="checkbox"]:not(:checked) + .btn-text::before {
+  transform: translateX(-100%);
+}
+.checkbox-btn input[type="checkbox"]:not(:checked) + .btn-text::after {
+  transform: translateX(100%);
+}
 // responsive
 @media (max-width: 1680px) {
   .about__subtitle {
