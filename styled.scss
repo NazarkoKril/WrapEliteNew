@@ -1981,6 +1981,9 @@ footer {
   .contact__title {
     font-size: 30px;
   }
+  .hero__card_list {
+    grid-template-columns: 1fr 1fr;
+  }
 }
 @media (max-width: 1100px) {
   .form__box {
@@ -1995,11 +1998,11 @@ footer {
   .review__slide_title {
     font-size: 20px;
   }
+  .review__slide_subtitle {
+    font-size: 15px;
+  }
 }
 @media (max-width: 1000px) {
-  .hero__card_list {
-    grid-template-columns: 1fr 1fr;
-  }
   .hero__card_info h4 {
     font-size: 40px;
   }
@@ -2012,9 +2015,7 @@ footer {
   .review__name {
     font-size: 16px;
   }
-  .review__slide_subtitle {
-    font-size: 15px;
-  }
+
   .review__slide_title {
     margin-bottom: 8px;
   }
