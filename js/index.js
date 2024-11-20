@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 });
-// form 
+// animate form
 document.addEventListener('DOMContentLoaded', (event) => {
     const mobileWrappingCheckbox = document.getElementById('mobileWrappingCheckbox');
     const addressInput = document.getElementById('addressInput');

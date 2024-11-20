@@ -121,22 +121,97 @@
         </section>
         <section class="hero__section_text">
             <div class="service__top container">
-                <p class="service__subtitle" data-aos="fade-up" data-aos-duration="1000">WrapElite — il tuo esperto
-                    nella protezione e decorazione. Ci specializziamo nella trasformazione di
-                    automobili,
-                    motocicli e altri oggetti in vere opere d'arte. I nostri servizi offrono non solo un aspetto
-                    elegante,
-                    ma anche una
-                    protezione affidabile. Grazie al nostro team di professionisti e agli approcci innovativi,
-                    garantiamo la
-                    massima qualità
-                    e soluzioni uniche per ogni cliente.</p>
+                <p class="about_text service__subtitle" data-aos="fade-right" data-aos-duration="1000">
+                    Il servizio WrapElite esiste da oltre 16 anni e nel corso di questo tempo ci siamo affermati come
+                    veri esperti nel
+                    campo della protezione e della decorazione di automobili, motociclette e altri oggetti. La nostra
+                    azienda è
+                    diventata leader nel settore grazie all'esperienza pluriennale, al team altamente qualificato e alla
+                    continua
+                    ricerca dell'innovazione. Mettiamo sempre la qualità al primo posto, quindi i nostri prodotti e
+                    servizi soddisfano i
+                    più alti standard.
+                    In questi anni abbiamo vinto numerosi premi prestigiosi per la qualità e l'innovazione nel settore
+                    automobilistico.
+                    La nostra azienda è sempre alla ricerca di nuove opportunità per migliorare e implementare
+                    tecnologie
+                    all'avanguardia, il che ci consente di rimanere sempre un passo avanti rispetto alla concorrenza.
+                </p>
+            </div>
+            <div class="parallax">
+                <img src="./image/about1.jpg" alt="photo car">
+            </div>
+            <div class="service__top container">
+                <p class="about_text service__subtitle" data-aos="fade-left" data-aos-duration="1000">
+                    Abbiamo iniziato come una piccola azienda con risorse limitate, ma grazie alla nostra dedizione al
+                    lavoro e alla
+                    ricerca dell'eccellenza, oggi abbiamo una grande esperienza nella creazione di soluzioni uniche per
+                    i nostri
+                    clienti. I nostri servizi includono la protezione delle automobili da graffi e danni meccanici,
+                    nonché
+                    l'estetizzazione attraverso pellicole speciali. Grazie alla nostra esperienza e conoscenza, siamo in
+                    grado di creare
+                    le migliori soluzioni per ogni cliente, sia per progetti individuali che per ordini aziendali su
+                    larga scala.
+                    In questi anni abbiamo testato e applicato molti nuovi materiali e tecnologie. Abbiamo
+                    collaborazioni con molti
+                    fornitori di fama, il che ci permette di lavorare con prodotti di altissima qualità.
+                </p>
+            </div>
+            <div class="parallax">
+                <img src="./image/about2.jpg" alt="photo car">
+            </div>
+
+            <div class="service__top container">
+                <p class="about_text service__subtitle" data-aos="fade-right" data-aos-duration="1000">
+                    Nel nostro team lavorano solo i migliori professionisti, che possiedono una conoscenza approfondita
+                    non solo della
+                    tecnica automobilistica, ma anche delle più moderne tecniche di protezione e decorazione. In questi
+                    anni abbiamo
+                    completato numerosi progetti per i nostri clienti, da piccoli ordini privati a grandi contratti
+                    aziendali. Abbiamo
+                    esperienza nella lavorazione di tutti i tipi di veicoli e anche di oggetti non standard. In ogni
+                    progetto cerchiamo
+                    di considerare al massimo le richieste del cliente, il che ci permette di creare soluzioni
+                    personalizzate che
+                    soddisfano tutte le esigenze.
+                    Il nostro team perfeziona costantemente le proprie competenze, partecipando a corsi di formazione
+                    specializzati e
+                    seminari per rimanere al passo con le ultime tendenze e novità nel mondo del design automobilistico.
+                    Inoltre,
+                    conduciamo ricerche e test sui nuovi materiali per garantire il miglior risultato per i nostri
+                    clienti.
+                </p>
+            </div>
+            <div class="parallax">
+                <img src="./image/about3.jpg" alt="photo car">
+
+            </div>
+            <div class="service__top container">
+                <p class="about_text service__subtitle" data-aos="fade-left" data-aos-duration="1000">
+                    Grazie all'apprendimento continuo e all'adattamento alle nuove tecnologie, siamo sempre un passo
+                    avanti. I nostri
+                    clienti si affidano a noi perché lavoriamo solo con i migliori materiali che garantiscono alta
+                    qualità e durata
+                    delle nostre soluzioni. Il nostro obiettivo non è solo abbellire o proteggere, ma fare in modo che
+                    il tuo veicolo o
+                    altro oggetto appaia e funzioni perfettamente. Ogni progetto per noi è una nuova sfida, e siamo
+                    sempre pronti ad
+                    affrontarla.
+                    Siamo orgogliosi del fatto che la nostra azienda abbia guadagnato la fiducia di numerosi clienti,
+                    che ci
+                    raccomandano ai loro amici e partner. Questo testimonia il nostro livello di professionalità e la
+                    qualità del lavoro
+                    che offriamo.
+                    La collaborazione a lungo termine con i nostri clienti è un'altra prova che facciamo il nostro
+                    lavoro al massimo
+                    livello. Non ci limitiamo solo a ottenere risultati eccellenti, ma manteniamo anche rapporti
+                    duraturi e vantaggiosi
+                    con ogni cliente.
+                </p>
             </div>
         </section>
 
-        <section class="about__section about__page">
-
-        </section>
         <section class="hero__card_section" style="background-color: #e6e6e6">
             <ul class="hero__card_list">
                 <li class="about__card_item" data-aos="flip-left" data-aos-duration="1000">
@@ -634,7 +709,35 @@
         $('input[type="tel"]').click(function () {
             $(this).setCursorPosition(16);
         });
+
     </script>
+    <script>
+        function updateParallax() {
+            document.querySelectorAll('.parallax img').forEach((img) => {
+                const rect = img.parentElement.getBoundingClientRect();
+                const progress = Math.min(Math.max((window.innerHeight - rect.top) / (window.innerHeight + rect.height), 0), 1);
+                img.style.transform = `translate(-50%, -${progress * 50}%)`;
+            });
+        }
+
+        function shouldEnableParallax() {
+            return window.innerWidth > 500;
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            if (shouldEnableParallax()) {
+                updateParallax();
+            }
+        });
+
+        ['load', 'scroll'].forEach((event) => {
+            if (shouldEnableParallax()) {
+                window.addEventListener(event, updateParallax);
+            }
+        });
+    </script>
+
+
 </body>
 
 </html>

@@ -54,7 +54,7 @@ img {
 
 @media (max-width: 750px) {
   .container {
-    padding: 0 30px;
+    padding: 0 15px;
   }
 }
 html {
@@ -1032,7 +1032,7 @@ button {
 .col-3 {
   float: left;
   width: 100%;
-  margin-bottom: 20px;
+  margin-bottom: 13px;
   position: relative;
   border-radius: 0px !important;
 }
@@ -1165,17 +1165,23 @@ textarea.effect-20.has-content ~ label {
 }
 .additional-field,
 .additional-message {
-  transition: height 0.3s ease, opacity 0.3s ease;
+  transition: var(--trans);
   opacity: 0;
   color: #0e338b;
   font-family: "Lato", sans-serif;
   font-size: 16px;
+  height: 0px;
 }
 
 .additional-field.open,
 .additional-message.open {
   opacity: 1;
-  height: auto;
+  height: 40px;
+}
+.additional-message.open {
+  padding: 12px !important;
+  padding-left: 35px !important;
+  margin-bottom: 25px !important;
 }
 .additional-message {
   width: 100%;
@@ -1387,11 +1393,11 @@ footer {
 
 .about__hero {
   padding-top: 75px;
-  background-image: url(../image/serv_5.webp);
+  background-image: url(../image/about_title.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  height: 500px;
+  height: 60vh;
   position: relative;
   h2 {
     font-size: 90px;
@@ -1418,12 +1424,30 @@ footer {
 
 .hero__section_text {
   background-color: var(--color_grey);
-  padding-top: 50px;
   padding-bottom: 50px;
   z-index: 3;
   p {
     margin-bottom: 0px;
   }
+}
+.parallax {
+  position: relative;
+  height: 70vh;
+  overflow: hidden;
+}
+
+.parallax img {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%);
+  width: auto;
+  width: 100%;
+}
+.about_text {
+  padding-block: 100px;
+  font-size: 22px;
+  line-height: 150%;
 }
 .qual1 {
   position: relative;
@@ -1990,6 +2014,9 @@ footer {
     flex-direction: column;
     gap: 20px;
   }
+  .parallax {
+    height: 400px;
+  }
 }
 @media (max-width: 1060px) {
   .l__about {
@@ -2076,6 +2103,12 @@ footer {
   .hero__section h1 {
     font-size: 70px;
   }
+  .about__hero h2 {
+    font-size: 70px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-wrap: nowrap;
+  }
 }
 @media (max-width: 750px) {
   .form__info .form__container {
@@ -2130,6 +2163,23 @@ footer {
   }
   .hero__section {
     height: 70vh;
+  }
+  .parallax {
+    height: auto;
+  }
+
+  .parallax img {
+    position: relative;
+    height: auto;
+    width: 100%;
+  }
+  .about_text {
+    font-size: 16px;
+    padding-block: 20px;
+    text-align: justify;
+  }
+  .about__hero h2 {
+    font-size: 60px;
   }
 }
 @media (max-width: 400px) {
