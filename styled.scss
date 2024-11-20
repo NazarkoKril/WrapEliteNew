@@ -13,7 +13,7 @@
 }
 body {
   zoom: 1;
-  background-color: #e6e6e6;
+  background-color: #353535;
 }
 ::selection {
   background-color: #f13a3a;
@@ -2139,6 +2139,10 @@ footer {
 @media (max-width: 600px) {
   .r__about img {
     padding: 30px;
+  }
+  .parallax img {
+    transform: none !important;
+    left: 0px;
   }
 }
 @media (max-width: 500px) {

@@ -50,6 +50,33 @@ document.addEventListener('DOMContentLoaded', (event) => {
         }
     }
 });
+
+// AOS
+
+AOS.init({
+    once: true,
+});
+
+// phone
+$(".phoneInput").mask("+39-888-888-8888");
+
+$.fn.setCursorPosition = function (pos) {
+    if ($(this).get(0).setSelectionRange) {
+        $(this).get(0).setSelectionRange(pos, pos);
+    } else if ($(this).get(0).createTextRange) {
+        var range = $(this).get(0).createTextRange();
+        range.collapse(true);
+        range.moveEnd("character", pos);
+        range.moveStart("character", pos);
+        range.select();
+    }
+};
+
+$('input[type="tel"]').click(function () {
+    $(this).setCursorPosition(16);
+});
+
+
 // blog__swiper
 
 const swiperB = new Swiper(".blog__swiper", {
@@ -125,82 +152,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
-// hero_swiper
 
-let currentIndex = 0;
-const carLeftImages = document.querySelectorAll('.car-left');
-const carRightImages = document.querySelectorAll('.car-right');
-const nextButton = document.getElementById('next');
-const prevButton = document.getElementById('prev');
-const slideTitle = document.getElementById('slide-title');
-
-const titles = ["Oscuramento Vetri", "Wrapping Auto", "Pellicole Protettive PPF", "Design Grafico"];
-let isAnimating = false;
-let autoSlideInterval;
-
-
-const changeSlide = (direction) => {
-    if (isAnimating) return;
-    isAnimating = true;
-
-    slideTitle.style.opacity = 0;
-    slideTitle.style.transform = 'translateY(-20px)';
-
-    const nextIndex = (currentIndex + direction + carLeftImages.length) % carLeftImages.length;
-
-    carLeftImages[currentIndex].style.setProperty('--wheel-rotation', `${direction * 360}deg`);
-    carRightImages[currentIndex].style.setProperty('--wheel-rotation', `${direction * 360}deg`);
-
-    carLeftImages[currentIndex].style.transform = `translateX(${direction * 100}%)`;
-    carRightImages[currentIndex].style.transform = `translateX(${direction * 100}%)`;
-
-    carLeftImages[nextIndex].classList.remove('hidden');
-    carRightImages[nextIndex].classList.remove('hidden');
-
-    carLeftImages[nextIndex].style.setProperty('--wheel-rotation', `${-direction * 360}deg`);
-    carRightImages[nextIndex].style.setProperty('--wheel-rotation', `${-direction * 360}deg`);
-
-    carLeftImages[nextIndex].style.transform = `translateX(${-direction * 100}%)`;
-    carRightImages[nextIndex].style.transform = `translateX(${-direction * 100}%)`;
-
-    setTimeout(() => {
-        carLeftImages[nextIndex].style.transform = 'translateX(0)';
-        carRightImages[nextIndex].style.transform = 'translateX(0)';
-        carLeftImages[nextIndex].style.setProperty('--wheel-rotation', '0deg');
-        carRightImages[nextIndex].style.setProperty('--wheel-rotation', '0deg');
-    }, 10);
-
-    setTimeout(() => {
-        slideTitle.textContent = titles[nextIndex];
-        slideTitle.style.opacity = 1;
-        slideTitle.style.transform = 'translateY(0)';
-    }, 2000);
-
-    setTimeout(() => {
-        carLeftImages[currentIndex].classList.add('hidden');
-        carRightImages[currentIndex].classList.add('hidden');
-        currentIndex = nextIndex;
-        isAnimating = false;
-    }, 3000);
-
-    clearInterval(autoSlideInterval);
-    // autoSlideInterval = setInterval(() => changeSlide(1), 6000);
-};
-
-
-nextButton.addEventListener('click', () => {
-    changeSlide(1);
-    clearInterval(autoSlideInterval);
-    // autoSlideInterval = setInterval(() => changeSlide(1), 6000);
-});
-
-prevButton.addEventListener('click', () => {
-    changeSlide(-1);
-    clearInterval(autoSlideInterval);
-    // autoSlideInterval = setInterval(() => changeSlide(1), 6000);
-});
-
-// autoSlideInterval = setInterval(() => changeSlide(1), 6000);
 
 // pop up image
 

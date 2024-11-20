@@ -15,7 +15,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Catamaran:wght@100..900&display=swap" rel="stylesheet" />
-    <title>WrapElite new</title>
+    <title>WrapElite</title>
 </head>
 
 <body>
@@ -265,7 +265,7 @@
                 <a class="btn blog__btn" href="#form"><span class="btn__text">Tutti i blog</span></a>
             </div>
         </section>
-        <section class="hero__card_section" style="background-color: #e6e6e6">
+        <section class="hero__card_section">
             <ul class="hero__card_list">
                 <li class="about__card_item" data-aos="flip-left" data-aos-duration="1000">
                     <div class="about__card_inner">
@@ -568,35 +568,11 @@
             });
         });
     </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <script src="./js/index.js"></script>
     <script src="./js/maska-nomera.js"></script>
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-    <script>
-        AOS.init({
-            once: true,
-        });
-    </script>
-    <script>
-        $(".phoneInput").mask("+39-888-888-8888");
-
-        $.fn.setCursorPosition = function (pos) {
-            if ($(this).get(0).setSelectionRange) {
-                $(this).get(0).setSelectionRange(pos, pos);
-            } else if ($(this).get(0).createTextRange) {
-                var range = $(this).get(0).createTextRange();
-                range.collapse(true);
-                range.moveEnd("character", pos);
-                range.moveStart("character", pos);
-                range.select();
-            }
-        };
-
-        $('input[type="tel"]').click(function () {
-            $(this).setCursorPosition(16);
-        });
-
-    </script>
+    <script src="./js/index.js"></script>
 </body>
 
 </html>
