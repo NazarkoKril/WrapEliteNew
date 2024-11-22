@@ -114,6 +114,14 @@ const swiperC = new Swiper(".contact__swiper", {
     breakpoints: {
 
         320: {
+            slidesPerView: 1,
+            spaceBetween: 0
+        },
+        700: {
+            slidesPerView: 2,
+            spaceBetween: 0
+        },
+        1000: {
             slidesPerView: 3,
             spaceBetween: 0
         },
