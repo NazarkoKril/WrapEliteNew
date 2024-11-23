@@ -2355,6 +2355,12 @@ footer {
     margin-bottom: 15px;
     font-size: 18px !important;
     text-align: justify;
+    text-overflow: clip;
+    display: block;
+    overflow: visible;
+    text-overflow: unset;
+    -webkit-line-clamp: unset;
+    -webkit-box-orient: unset;
   }
   .blog_card {
     padding: 0px 70px;
