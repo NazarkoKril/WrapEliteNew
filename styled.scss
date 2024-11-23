@@ -974,7 +974,7 @@ h1 {
 }
 
 .form__info .form__adress h4 {
-  color: #2a2a2a;
+  color: #2a2a2a !important;
   font-size: 20px;
   font-style: normal;
   font-weight: 600;
@@ -1026,6 +1026,7 @@ textarea {
   transition: all 0.3s linear;
   height: 100%;
   resize: none;
+  border-radius: 0px !important;
 }
 
 input::placeholder,
@@ -1675,20 +1676,22 @@ footer {
   height: 100%;
   overflow: auto;
   background-color: rgba(0, 0, 0, 0.8);
+  justify-content: center;
+  align-items: center;
 }
 
 .modal-content {
   margin: 15% auto;
   display: block;
-  width: 65%;
+  width: 80%;
   max-width: 700px;
   animation: fadeIn 0.5s;
 }
 
 .close {
   position: absolute;
-  top: 23%;
-  right: 29%;
+  top: 45px;
+  right: 10px;
   color: var(--color_red);
   font-size: 68px;
   font-weight: bold;
@@ -2387,6 +2390,10 @@ footer {
   }
   .contact__video {
     margin-top: 20px;
+  }
+  .modal-content {
+    width: 90%;
+    max-width: 100%;
   }
 }
 

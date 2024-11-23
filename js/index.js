@@ -167,7 +167,7 @@ document.addEventListener("DOMContentLoaded", function () {
 function openModal(element) {
     const modal = document.getElementById("imageModal");
     const modalImg = document.getElementById("modalImage");
-    modal.style.display = "block";
+    modal.style.display = "flex";
     modalImg.src = element.src;
 }
 
