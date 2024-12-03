@@ -440,30 +440,28 @@ h1 {
 }
 
 .car-left {
-  right: -100%;
+  right: -105%;
 }
 
 .car-left img {
-  width: 100%;
+  width: 95%;
 }
 
 .car-right {
-  left: -100%;
+  left: -95%;
 }
 
 .car-right img {
-  width: 100%;
+  width: 95%;
   position: relative;
 }
 
 .car-left::before,
-.car-right::before,
-.car-left::after,
-.car-right::after {
+.car-right::before {
   content: "";
   position: absolute;
-  width: 13.5%;
-  height: 26.5%;
+  width: 16.5%;
+  height: 54.3%;
   background-image: url(../image/wheel.png);
   transform: rotate(var(--wheel-rotation, 0deg));
   background-size: cover;
@@ -472,24 +470,38 @@ h1 {
   z-index: 3;
 }
 
+.car-left::after,
+.car-right::after {
+  content: "";
+  position: absolute;
+  width: 16.2%;
+  height: 53%;
+  background-image: url(../image/wheel1.png);
+  transform: rotate(var(--wheel-rotation, 0deg));
+  background-size: cover;
+  transform-origin: center;
+  transition: transform 3s ease-in-out;
+  z-index: 3;
+}
+
 .car-left::before {
-  bottom: 26.5%;
-  left: 23.2%;
+  bottom: 3.3%;
+  left: 12.9%;
 }
 
 .car-left::after {
-  bottom: 25.5%;
-  right: 22.3%;
+  bottom: 2.2%;
+  right: 17.5%;
 }
 
 .car-right::before {
-  bottom: 26.5%;
-  left: 23.2%;
+  bottom: 3.3%;
+  left: 12.9%;
 }
 
 .car-right::after {
-  bottom: 25.5%;
-  right: 22.3%;
+  bottom: 2.2%;
+  right: 17.5%;
 }
 
 .hidden {
