@@ -859,8 +859,8 @@
             carLeftImages[currentIndex].style.setProperty('--wheel-rotation', `${direction * 360}deg`);
             carRightImages[currentIndex].style.setProperty('--wheel-rotation', `${direction * 360}deg`);
 
-            carLeftImages[currentIndex].style.transform = `translateX(${direction * 100}%)`;
-            carRightImages[currentIndex].style.transform = `translateX(${direction * 100}%)`;
+            carLeftImages[currentIndex].style.transform = `translateX(${direction * 150}%)`;
+            carRightImages[currentIndex].style.transform = `translateX(${direction * 150}%)`;
 
             carLeftImages[nextIndex].classList.remove('hidden');
             carRightImages[nextIndex].classList.remove('hidden');
@@ -868,8 +868,8 @@
             carLeftImages[nextIndex].style.setProperty('--wheel-rotation', `${-direction * 360}deg`);
             carRightImages[nextIndex].style.setProperty('--wheel-rotation', `${-direction * 360}deg`);
 
-            carLeftImages[nextIndex].style.transform = `translateX(${-direction * 100}%)`;
-            carRightImages[nextIndex].style.transform = `translateX(${-direction * 100}%)`;
+            carLeftImages[nextIndex].style.transform = `translateX(${-direction * 150}%)`;
+            carRightImages[nextIndex].style.transform = `translateX(${-direction * 150}%)`;
 
             setTimeout(() => {
                 carLeftImages[nextIndex].style.transform = 'translateX(0)';
